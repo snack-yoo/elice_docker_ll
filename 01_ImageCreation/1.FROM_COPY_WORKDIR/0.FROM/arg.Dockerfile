@@ -1,0 +1,2 @@
+ARG MY_VERSION
+FROM nginx:${MY_VERSION}
