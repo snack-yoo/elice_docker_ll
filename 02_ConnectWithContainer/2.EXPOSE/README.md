@@ -7,3 +7,5 @@
 5. docker run -p
 더 자세한 건 뒤에서 배운다~
 6. 같은 네트워크간 통신 확인
+   docker network create my-network
+   docker run -it --network my-network expose.basic

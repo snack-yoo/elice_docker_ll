@@ -5,7 +5,7 @@ RUN echo "ALPHA_BRAVO is ${ALPHA}_BRAVO" >> /results.txt
 RUN echo "ALPHA is $ALPHA" >> /results.txt
 RUN echo "ALPHA is ${ALPHA}" >> /results.txt
 RUN echo "ALPHA is ${ALPHA:-bravo}" >> /results.txt
-RUN echo "ALPHA is ${ALPHA:+challie}" >> /results.txt
+RUN echo "ALPHA is ${ALPHA:+charlie}" >> /results.txt
 RUN echo "BRAVO is ${BRAVO:-delta}" >> /results.txt
 RUN echo "BRAVO is ${BRAVO:+echo}" >> /results.txt
 ENTRYPOINT cat /results.txt
@@ -16,6 +16,6 @@ ENTRYPOINT cat /results.txt
 #ALPHA is alpha
 #ALPHA is alpha
 #ALPHA is alpha
-#ALPHA is challie
+#ALPHA is charlie
 #BRAVO is delta
 #BRAVO is

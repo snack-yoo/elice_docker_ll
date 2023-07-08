@@ -1,11 +1,11 @@
 FROM ubuntu
 ENV ALPHA="alpha"
 ENV BRAVO=bravo
-ENV CHALLIE="Hello\
-challie"
+ENV CHARLIE="Hello\
+charlie"
 ENV DELTA=delta ECHO="echo"
 ENTRYPOINT echo "ALPHA is ${ALPHA}, \
 BRAVO is ${BRAVO}, \
-CHALLIE is ${CHALLIE}, \
+CHARLIE is ${CHARLIE}, \
 DELTA is ${DELTA}, \
 ECHO is ${ECHO}"

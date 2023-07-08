@@ -8,4 +8,4 @@ ENTRYPOINT echo "ALPHA is ${ALPHA}"
 #ALPHA is bravo
 
 #➜  1.ENV git:(main) ✗ docker run -it --env-file .env test.env.runtime
-#ALPHA is challie
+#ALPHA is charlie

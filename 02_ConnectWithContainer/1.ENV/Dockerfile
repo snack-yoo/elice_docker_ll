@@ -1,4 +1,0 @@
-FROM ubuntu
-ENV A=A
-ENV B=B
-ENV C=C D=D
