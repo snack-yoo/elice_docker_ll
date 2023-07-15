@@ -1,5 +1,7 @@
 1. VOLUME 기본 사용
    - volume 확인하기
+     docker volume ls
+     docker volume inspect [volume]
      # docker run -it --rm --privileged --pid=host justincormack/nsenter1
    - 여러개 사용하기
 2. docker run -v 볼륨 사용
