@@ -1,0 +1,40 @@
+version: "3.8"
+services:
+  my-app:
+    image: myapp.db
+    container_name: my-app
+    build:
+      context: /Users/ksyoo/Documents/ksyoo.project/lecture_elice_docker#2/codes/elice_docker_ll/03_DockerComposeBasic/my-app
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - MY_DB_HOST=my-db
+    networks:
+      - elice-network
+#    depends_on:
+#      my-db:
+#        condition: service_healthy
+
+  my-db:
+    image: mysql:8.0.33
+    container_name: my-db
+    volumes:
+      - /Users/ksyoo/Documents/ksyoo.project/lecture_elice_docker#2/codes/elice_docker_ll/03_DockerComposeBasic/compose/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "3306:3306"
+    env_file:
+      - .mysql-env
+    command:
+      - --default-authentication-plugin=mysql_native_password
+    networks:
+      - elice-network
+    healthcheck:
+      test: [ "CMD", "mysqladmin", "ping", "-h", "localhost", "--silent" ]
+      interval: 5s
+      timeout: 3s
+      retries: 3
+
+
+networks:
+  elice-network:

@@ -1,11 +1,15 @@
 import { Injectable } from '@nestjs/common';
 import { createConnection } from 'mysql2/promise';
+import * as process from "process";
 
 @Injectable()
 export class AppService {
   async getHello(): Promise<string> {
+    const DB_HOST = process.env.MY_DB_HOST || 'localhost';
+    console.log("DB_HOST is " + DB_HOST);
+
     const connection = await createConnection({
-      host     : 'localhost',
+      host     : process.env.MY_DB_HOST,
       port: 3306,
       user     : 'foo',
       password : '1234',

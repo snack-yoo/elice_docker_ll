@@ -1,0 +1,7 @@
+version: "3.8"
+services:
+  my-app:
+    environment:
+      - MY_DB_HOST=host.docker.internal
+
+#  docker compose -f docker-compose.yaml -f foo.yaml up -d
